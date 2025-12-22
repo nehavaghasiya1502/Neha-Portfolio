@@ -17,7 +17,7 @@ const Skills = () => {
       sx={{
         py: 10,
         px: 2,
-        backgroundColor: "#f9f7ff",
+        backgroundColor: "#f4f2ff",
       }}
     >
       <Typography
@@ -37,7 +37,7 @@ const Skills = () => {
               key={index}
               sx={{
                 p: 3,
-                bgcolor: "#fff",
+                backgroundColor: "#f4f2ff",
                 borderRadius: 3,
                 boxShadow: "0 10px 25px rgba(0,0,0,0.08)",
               }}
