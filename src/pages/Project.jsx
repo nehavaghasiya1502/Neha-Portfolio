@@ -14,19 +14,19 @@ const projects = [
     {
         name: "Fresh-Cart – Fruits Website",
         description: "Created a simple and responsive multi-page website for fresh fruits using React Router DOM, showcasing Home, Products, About, and a Contact pages with a clean and modern design.",
-        liveLink: "https://reactrouterapp.vercel.app/",
+        liveLink: "https://fresh-cart-peach-mu.vercel.app/",
          code: "https://github.com/nehavaghasiya1502/Fresh-Cart"
     },
     {
         name: "Grand-Oria – Hotel Landing Page",
         description: "Developed a fully responsive hotel landing page using React, css and React Bootstrap, featuring modern layout, styled components, and smooth visuals for an engaging user experience.",
-        liveLink: "https://reactbootstrapapp.vercel.app/",
+        liveLink: "https://grand-oria.vercel.app/",
          code: "https://github.com/nehavaghasiya1502/GrandOria"
     },
     {
         name: "JG University – Landing Page",
         description: "Built a modern and fully responsive university website using React and MUI. The site features interactive components. It highlights courses, faculty details, events, and contact information.",
-        liveLink: "https://reactmuiapp-six.vercel.app/",
+        liveLink: "https://jg-university.vercel.app/",
         code: "https://github.com/nehavaghasiya1502/JG-University"
     },
      {
