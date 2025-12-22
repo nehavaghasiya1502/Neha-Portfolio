@@ -1,0 +1,112 @@
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 18px 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: transparent;
+  transition: 0.3s ease;
+  z-index: 9999;
+  height: 80px;
+  box-sizing: border-box;
+  flex-wrap: nowrap;
+}
+
+.header.scrolled {
+  background: rgba(88, 54, 140, 0.9);
+}
+
+/* logo */
+.header-left img {
+  height: 110px;
+}
+.brand .name {
+  font-size: 25px;
+  font-weight: 700;
+  cursor: pointer;
+  background: linear-gradient(90deg, #a35bb9, #1f033f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: cursive;
+}
+
+.brand .role {
+  display: block;
+  font-size: 12px;
+  color: #5d3272;
+  letter-spacing: 2px;
+   font-family: cursive;
+}
+
+/* menu */
+.menu-toggle {
+  display: none;
+}
+
+.header-center {
+  display: flex;
+  align-items: center;
+  margin-right: 50px;
+}
+.header-center a {
+  margin: 0 18px;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all ease 0.4s;
+}
+
+.header-center a:hover {
+  color: #a35bb9;
+}
+/* icons */
+.header-right {
+  display: flex;
+  align-items: center;
+  margin-right: 40px;
+}
+.header-right svg {
+  color: white !important;
+  font-size: 24px !important;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  pointer-events: auto;
+}
+
+.header-right svg:hover {
+  color: #a35bb9 !important;
+}
+
+/* responsive */
+@media (max-width: 991px) {
+
+  .header-center {
+    display: none;
+  }
+  .header-center.active {
+    display: flex;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background: rgba(88, 54, 140, 0.95);
+    flex-direction: column;
+    align-items: center;
+    gap: 22px;
+    padding: 25px 0;
+    z-index: 9998;
+  }
+
+  .menu-toggle {
+    display: block;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 26px;
+    cursor: pointer;
+  }
+ 
+
+}
