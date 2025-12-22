@@ -3,9 +3,19 @@ import { Box, Typography, Grid, Card, CardContent, CardActions, Button } from "@
 
 const projects = [
     {
+        name: "Neha - Portfolio",
+        description: "Developed a fully responsive hotel landing page using React, css and React Bootstrap, featuring modern layout, styled components, and smooth visuals for an engaging user experience.",
+        liveLink: "neha-portfolio-zeta.vercel.app/",
+    },
+    {
         name: "Fresh-Cart – Fruits Website",
         description: "~ Created a simple and responsive multi-page website for fresh fruits using React Router DOM, showcasing Home, Products, About, and Contact pages with a clean and modern design",
         liveLink: "https://reactrouterapp.vercel.app/",
+    },
+    {
+        name: "Elegance - Hotel Website",
+        description: "Developed a fully responsive hotel landing page using React, css and React Bootstrap, featuring modern layout, styled components, and smooth visuals for an engaging user experience.",
+        liveLink: "https://elegance-bootstrap.vercel.app/",
     },
     {
         name: "JG University – Landing Page",
