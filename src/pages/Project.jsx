@@ -1,32 +1,41 @@
 import React from "react";
 import { Box, Typography, Grid, Card, CardContent, CardActions, Button } from "@mui/material";
+import { FaGithub} from "react-icons/fa";
+import { MdLaunch } from "react-icons/md";
+
 
 const projects = [
     {
         name: "Neha - Portfolio",
-        description: "Developed a fully responsive hotel landing page using React, css and React Bootstrap, featuring modern layout, styled components, and smooth visuals for an engaging user experience.",
+        description: "Developed a fully responsive portfolio landing page using React, css and React Bootstrap, featuring modern layout, styled components, smooth visuals for an engaging user experience.",
         liveLink: "neha-portfolio-zeta.vercel.app/",
+         code: "https://github.com/nehavaghasiya1502/Neha-Portfolio"
     },
     {
         name: "Fresh-Cart – Fruits Website",
-        description: "~ Created a simple and responsive multi-page website for fresh fruits using React Router DOM, showcasing Home, Products, About, and Contact pages with a clean and modern design",
+        description: "Created a simple and responsive multi-page website for fresh fruits using React Router DOM, showcasing Home, Products, About, and a Contact pages with a clean and modern design.",
         liveLink: "https://reactrouterapp.vercel.app/",
-    },
-    {
-        name: "Elegance - Hotel Website",
-        description: "Developed a fully responsive hotel landing page using React, css and React Bootstrap, featuring modern layout, styled components, and smooth visuals for an engaging user experience.",
-        liveLink: "https://elegance-bootstrap.vercel.app/",
-    },
-    {
-        name: "JG University – Landing Page",
-        description: "Built a modern and fully responsive university website using React and MUI. The site features interactive components. It highlights courses, faculty details, events, and contact information",
-        liveLink: "https://reactmuiapp-six.vercel.app/",
+         code: "https://github.com/nehavaghasiya1502/Fresh-Cart"
     },
     {
         name: "Grand-Oria – Hotel Landing Page",
         description: "Developed a fully responsive hotel landing page using React, css and React Bootstrap, featuring modern layout, styled components, and smooth visuals for an engaging user experience.",
         liveLink: "https://reactbootstrapapp.vercel.app/",
+         code: "https://github.com/nehavaghasiya1502/GrandOria"
     },
+    {
+        name: "JG University – Landing Page",
+        description: "Built a modern and fully responsive university website using React and MUI. The site features interactive components. It highlights courses, faculty details, events, and contact information.",
+        liveLink: "https://reactmuiapp-six.vercel.app/",
+        code: "https://github.com/nehavaghasiya1502/JG-University"
+    },
+     {
+        name: "Elegance - Hotel Website",
+        description: "Developed a fully responsive hotel landing page using React, css and React Bootstrap, featuring modern layout, styled components, and smooth visuals for an engaging user experience.",
+        liveLink: "https://elegance-bootstrap.vercel.app/",
+        code: "https://github.com/nehavaghasiya1502/elegance-bootstrap"
+    }
+    
 ];
 
 const Projects = () => {
@@ -95,7 +104,20 @@ const Projects = () => {
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >
-                                    Live Link
+                                  <MdLaunch  style={{ marginRight: "5px" }} />  Live 
+                                </Button>
+                                <Button
+                                    size="big"
+                                    variant="contained"
+                                    sx={{
+                                        backgroundColor: "#6b3fa0",
+                                        "&:hover": { backgroundColor: "#532a84" },
+                                    }}
+                                    href={project.code}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                 <FaGithub  style={{ marginRight: "5px" }} />   CODE
                                 </Button>
                             </CardActions>
                         </Card>
