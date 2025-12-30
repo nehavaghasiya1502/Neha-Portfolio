@@ -1,13 +1,19 @@
 import React from "react";
 import { Box, Typography, LinearProgress, Stack } from "@mui/material";
 import { FaHtml5, FaCss3Alt, FaBootstrap, FaGitAlt, FaReact } from "react-icons/fa";
+import { TbBrandJavascript } from "react-icons/tb";
+import { SiVercel } from "react-icons/si";
+
 
 const skills = [
   { name: "HTML", icon: <FaHtml5 />, value: 96, color: "#e34c26" },
   { name: "CSS", icon: <FaCss3Alt />, value: 85, color: "#264de4" },
   { name: "Bootstrap", icon: <FaBootstrap />, value: 88, color: "#7952b3" },
-  { name: "Git", icon: <FaGitAlt />, value: 70, color: "#f1502f" },
+  { name: "Javascript   ", icon: <TbBrandJavascript />, value: 70, color: "#f1d12fff" },
   { name: "React", icon: <FaReact />, value: 55, color: "#61dafb" },
+  { name: "Git", icon: <FaGitAlt />, value: 74, color: "#f1502f" },
+  { name: "Vercel", icon: <SiVercel />, value: 79, color: "#0a0909ff" },
+  
 ];
 
 const Skills = () => {

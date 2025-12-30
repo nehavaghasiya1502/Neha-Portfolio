@@ -61,6 +61,7 @@
   color: white;
   font-size: 16px;
   transition: all 0.3s ease;
+  text-decoration: none;
 }
 
 .hero-btn:hover {

@@ -42,7 +42,7 @@ const Header = () => {
           </a>
 
           <a
-            href="https://www.linkedin.com/in/neha-vaghasiya-69a34330b"
+            href="https://www.linkedin.com/in/neha-vaghasiya-106b743a1"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"

@@ -19,7 +19,10 @@ const Herosection = () => {
           HTML | CSS | Bootstrap | ReactJS
         </p>
 
-        <button className="hero-btn">View Projects</button>
+        {/* <button className="hero-btn" id="Projects">View Projects</button> */}
+        <a href="#projects" className="hero-btn">
+          Download CV
+        </a>
       </div>
     </section>
   );
