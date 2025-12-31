@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Typography, Grid, Card, CardContent, CardActions, Button } from "@mui/material";
-import { FaGithub} from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
 import { MdLaunch } from "react-icons/md";
 
 
@@ -9,19 +9,19 @@ const projects = [
         name: "Neha - Portfolio",
         description: "Developed a fully responsive portfolio landing page using React, css and React Bootstrap, featuring modern layout, styled components, smooth visuals for an engaging user experience.",
         liveLink: "neha-portfolio-zeta.vercel.app/",
-         code: "https://github.com/nehavaghasiya1502/Neha-Portfolio"
+        code: "https://github.com/nehavaghasiya1502/Neha-Portfolio"
     },
     {
         name: "Fresh-Cart – Fruits Website",
         description: "Created a simple and responsive multi-page website for fresh fruits using React Router DOM, showcasing Home, Products, About, and a Contact pages with a clean and modern design.",
         liveLink: "https://fresh-cart-peach-mu.vercel.app/",
-         code: "https://github.com/nehavaghasiya1502/Fresh-Cart"
+        code: "https://github.com/nehavaghasiya1502/Fresh-Cart"
     },
     {
         name: "Grand-Oria – Hotel Landing Page",
         description: "Developed a fully responsive hotel landing page using React, css and React Bootstrap, featuring modern layout, styled components, and smooth visuals for an engaging user experience.",
         liveLink: "https://grand-oria.vercel.app/",
-         code: "https://github.com/nehavaghasiya1502/GrandOria"
+        code: "https://github.com/nehavaghasiya1502/GrandOria"
     },
     {
         name: "JG University – Landing Page",
@@ -29,13 +29,13 @@ const projects = [
         liveLink: "https://jg-university.vercel.app/",
         code: "https://github.com/nehavaghasiya1502/JG-University"
     },
-     {
+    {
         name: "Elegance - Hotel Website",
         description: "Developed a fully responsive hotel landing page using React, css and React Bootstrap, featuring modern layout, styled components, and smooth visuals for an engaging user experience.",
         liveLink: "https://elegance-bootstrap.vercel.app/",
         code: "https://github.com/nehavaghasiya1502/elegance-bootstrap"
     }
-    
+
 ];
 
 const Projects = () => {
@@ -47,6 +47,8 @@ const Projects = () => {
                 px: 2,
                 backgroundColor: "#f4f2ff",
                 textAlign: "center",
+                // display: "flex",
+                // justifyContent: "center"
             }}
         >
             <Typography
@@ -58,17 +60,26 @@ const Projects = () => {
                 My Projects
             </Typography>
 
-            <Grid container spacing={4} justifyContent="center">
+            <Grid container spacing={4} justifyContent="center"
+                sx={{
+                    maxWidth: 1440,
+                    mx: "auto",
+                    // display: "flex",
+                    // flexWrap: "wrap",
+                    // justifyContent: "space-between"
+                }}>
                 {projects.map((project, index) => (
-                    <Grid item xs={12} sm={6} md={4} key={index}>
+                    <Grid item xs={12} sm={6} md={6} key={index}>
                         <Card
                             sx={{
                                 p: 2,
+                                maxWidth: 580,
+                                mx: "auto",
                                 display: "flex",
                                 flexDirection: "column",
                                 justifyContent: "space-between",
                                 // height: "100%", 
-                                minHeight: 100,         
+                                minHeight: 100,
                                 borderRadius: 3,
                                 boxShadow: "0 6px 20px rgba(0,0,0,0.1)",
                                 transition: "transform 0.3s, box-shadow 0.3s",
@@ -92,7 +103,13 @@ const Projects = () => {
                                     {project.description}
                                 </Typography>
                             </CardContent>
-                            <CardActions>
+                            <CardActions
+                                sx={{
+                                    display: "flex",
+                                    justifyContent: "center",
+                                    gap: 1,
+                                    flexWrap: "wrap",
+                                }}>
                                 <Button
                                     size="big"
                                     variant="contained"
@@ -104,7 +121,7 @@ const Projects = () => {
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >
-                                  <MdLaunch  style={{ marginRight: "5px" }} />  Live 
+                                    <MdLaunch style={{ marginRight: "5px" }} />  Live
                                 </Button>
                                 <Button
                                     size="big"
@@ -117,7 +134,7 @@ const Projects = () => {
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >
-                                 <FaGithub  style={{ marginRight: "5px" }} />   CODE
+                                    <FaGithub style={{ marginRight: "5px" }} />   CODE
                                 </Button>
                             </CardActions>
                         </Card>

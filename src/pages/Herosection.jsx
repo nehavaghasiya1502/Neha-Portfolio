@@ -21,7 +21,7 @@ const Herosection = () => {
 
         {/* <button className="hero-btn" id="Projects">View Projects</button> */}
         <a href="#projects" className="hero-btn">
-          Download CV
+          View Projects
         </a>
       </div>
     </section>
