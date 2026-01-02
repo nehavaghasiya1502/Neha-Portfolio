@@ -31,7 +31,7 @@ const projects = [
     },
     {
         name: "Elegance - Hotel Website",
-        description: "Developed a fully responsive hotel landing page using React, css and React Bootstrap, featuring modern layout, styled components, and smooth visuals for an engaging user experience.",
+        description: "Developed a fully responsive hotel landing page using HTML, CSS and Bootstrap, featuring modern layout, styled components, and smooth visuals for an engaging user experience.",
         liveLink: "https://elegance-bootstrap.vercel.app/",
         code: "https://github.com/nehavaghasiya1502/elegance-bootstrap"
     }
@@ -47,8 +47,6 @@ const Projects = () => {
                 px: 2,
                 backgroundColor: "#f4f2ff",
                 textAlign: "center",
-                // display: "flex",
-                // justifyContent: "center"
             }}
         >
             <Typography
@@ -64,9 +62,6 @@ const Projects = () => {
                 sx={{
                     maxWidth: 1440,
                     mx: "auto",
-                    // display: "flex",
-                    // flexWrap: "wrap",
-                    // justifyContent: "space-between"
                 }}>
                 {projects.map((project, index) => (
                     <Grid item xs={12} sm={6} md={6} key={index}>

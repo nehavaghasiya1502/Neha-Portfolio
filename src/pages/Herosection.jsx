@@ -1,5 +1,6 @@
 import React from "react";
 import "./Herosection.css";
+import resume from "../assets/hero/Neha_Resume.pdf";
 
 const Herosection = () => {
   return (
@@ -20,8 +21,8 @@ const Herosection = () => {
         </p>
 
         {/* <button className="hero-btn" id="Projects">View Projects</button> */}
-        <a href="#projects" className="hero-btn">
-          View Projects
+        <a href={resume} className="hero-btn">
+          Download CV
         </a>
       </div>
     </section>
