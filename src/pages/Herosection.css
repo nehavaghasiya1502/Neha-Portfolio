@@ -74,3 +74,31 @@
     font-size: 40px;
   }
 }
+/* ===== Hero Scroll Animation ===== */
+
+.hero-overlay {
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.hero.show .hero-overlay {
+  opacity: 1;
+}
+
+.hero-anim {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: all 0.8s ease;
+}
+
+.hero.show .hero-anim {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* delays */
+.delay-1 { transition-delay: 0.2s; }
+.delay-2 { transition-delay: 0.4s; }
+.delay-3 { transition-delay: 0.6s; }
+.delay-4 { transition-delay: 0.8s; }
+.delay-5 { transition-delay: 1s; }

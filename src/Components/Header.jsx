@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./Header.css";
 import { FaGithub, FaLinkedin, FaEnvelope, FaBars, FaTimes } from "react-icons/fa";
 
-const Header = () => {
+const Header = ({ brandName, navLinks, socialLinks }) => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -19,45 +19,44 @@ const Header = () => {
 
       <div className="header-left">
         <div className="brand">
-          <span className="name">Neha's Portfolio</span>
+          <span className="name">{brandName}</span>
         </div>
       </div>
 
       {/* Navbar */}
       <nav className={`header-center ${menuOpen ? "active" : ""}`}>
-        <a href="#home" onClick={() => setMenuOpen(false)}>Home</a>
-        <a href="#about" onClick={() => setMenuOpen(false)}>About</a>
-        <a href="#skills" onClick={() => setMenuOpen(false)}>Skills</a>
-        <a href="#projects" onClick={() => setMenuOpen(false)}>Projects</a>
-        <a href="#contact" className="contact-link" onClick={() => setMenuOpen(false)}>Contact</a>
+        {navLinks.map((link, index) => (
+          <a
+            key={index}
+            href={link.href}
+            className={link.className || ""}
+            onClick={() => setMenuOpen(false)}
+          >
+            {link.name}
+          </a>
+        ))}
 
         <div className="header-right">
-          <a
-            href="https://github.com/nehavaghasiya1502"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="GitHub"
-          >
-            <FaGithub />
-          </a>
+          {socialLinks.github && (
+            <a href={socialLinks.github} target="_blank" rel="noopener noreferrer">
+              <FaGithub />
+            </a>
+          )}
 
-          <a
-            href="https://www.linkedin.com/in/neha-vaghasiya-106b743a1"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="LinkedIn"
-          >
-            <FaLinkedin />
-          </a>
-         
-          <a
-            href="mailto:nehavaghasiya573@gmail.com"
-            aria-label="Email"
-          >
-            <FaEnvelope />
-          </a>
+          {socialLinks.linkedin && (
+            <a href={socialLinks.linkedin} target="_blank" rel="noopener noreferrer">
+              <FaLinkedin />
+            </a>
+          )}
+
+          {socialLinks.email && (
+            <a href={`mailto:${socialLinks.email}`}>
+              <FaEnvelope />
+            </a>
+          )}
         </div>
       </nav>
+
       {/* Toggler */}
       <button
         className="menu-toggle"
@@ -72,4 +71,3 @@ const Header = () => {
 };
 
 export default Header;
-

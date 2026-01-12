@@ -1,14 +1,13 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Box, Typography, Grid, Card, CardContent, CardActions, Button } from "@mui/material";
 import { FaGithub } from "react-icons/fa";
 import { MdLaunch } from "react-icons/md";
-
 
 const projects = [
     {
         name: "Neha - Portfolio",
         description: "Developed a fully responsive portfolio landing page using React, css and React Bootstrap, featuring modern layout, styled components, smooth visuals for an engaging user experience.",
-        liveLink: "neha-portfolio-zeta.vercel.app/",
+        liveLink: "https://neha-portfolio-zeta.vercel.app/",
         code: "https://github.com/nehavaghasiya1502/Neha-Portfolio"
     },
     {
@@ -35,106 +34,106 @@ const projects = [
         liveLink: "https://elegance-bootstrap.vercel.app/",
         code: "https://github.com/nehavaghasiya1502/elegance-bootstrap"
     }
-
 ];
 
 const Projects = () => {
+    const sectionRef = useRef(null);
+    const [show, setShow] = useState(false);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setShow(false);
+                    setTimeout(() => setShow(true), 100);
+                } else {
+                    setShow(false);
+                }
+            },
+            { threshold: 0.25 }
+        );
+
+        if (sectionRef.current) observer.observe(sectionRef.current);
+
+        return () => {
+            if (sectionRef.current) observer.unobserve(sectionRef.current);
+        };
+    }, []);
     return (
         <Box
             id="projects"
+            ref={sectionRef}
             sx={{
                 py: 12,
                 px: 2,
                 backgroundColor: "#f4f2ff",
                 textAlign: "center",
+                scrollMarginTop: "20px",
             }}
         >
-            <Typography
-                variant="h4"
-                fontWeight="700"
-                color="#6b3fa0"
-                mb={6}
-            >
+            <Typography variant="h4" fontWeight="700" color="#6b3fa0" mb={6}>
                 My Projects
             </Typography>
 
-            <Grid container spacing={4} justifyContent="center"
-                sx={{
-                    maxWidth: 1440,
-                    mx: "auto",
-                }}>
-                {projects.map((project, index) => (
-                    <Grid item xs={12} sm={6} md={6} key={index}>
-                        <Card
-                            sx={{
-                                p: 2,
-                                maxWidth: 580,
-                                mx: "auto",
-                                display: "flex",
-                                flexDirection: "column",
-                                justifyContent: "space-between",
-                                // height: "100%", 
-                                minHeight: 100,
-                                borderRadius: 3,
-                                boxShadow: "0 6px 20px rgba(0,0,0,0.1)",
-                                transition: "transform 0.3s, box-shadow 0.3s",
-                                "&:hover": {
-                                    transform: "translateY(-10px)",
-                                    boxShadow: "0 12px 25px rgba(0,0,0,0.15)",
-                                },
-                                background: "linear-gradient(145deg, #ffffff, #f0eaff)",
-                            }}
-                        >
-                            <CardContent>
-                                <Typography
-                                    variant="h6"
-                                    fontWeight="600"
-                                    mb={1}
-                                    sx={{ color: "#4b2a85" }}
-                                >
-                                    {project.name}
-                                </Typography>
-                                <Typography variant="body2" color="text.secondary">
-                                    {project.description}
-                                </Typography>
-                            </CardContent>
-                            <CardActions
+            <Grid container spacing={4} justifyContent="center" sx={{ maxWidth: 1440, mx: "auto" }}>
+                {projects.map((project, index) => {
+
+                    let hiddenTransform = "translateX(-80px)"; 
+                    if (index % 2 === 1) hiddenTransform = "translateX(80px)"; 
+                    if (index === 4) hiddenTransform = "translateY(80px)"; 
+
+                    return (
+                        <Grid item xs={12} sm={6} md={6} key={index}>
+                            <Card
                                 sx={{
-                                    display: "flex",
-                                    justifyContent: "center",
-                                    gap: 1,
-                                    flexWrap: "wrap",
-                                }}>
-                                <Button
-                                    size="big"
-                                    variant="contained"
-                                    sx={{
-                                        backgroundColor: "#6b3fa0",
-                                        "&:hover": { backgroundColor: "#532a84" },
-                                    }}
-                                    href={project.liveLink}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    <MdLaunch style={{ marginRight: "5px" }} />  Live
-                                </Button>
-                                <Button
-                                    size="big"
-                                    variant="contained"
-                                    sx={{
-                                        backgroundColor: "#6b3fa0",
-                                        "&:hover": { backgroundColor: "#532a84" },
-                                    }}
-                                    href={project.code}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    <FaGithub style={{ marginRight: "5px" }} />   CODE
-                                </Button>
-                            </CardActions>
-                        </Card>
-                    </Grid>
-                ))}
+                                    p: 2,
+                                    maxWidth: 580,
+                                    mx: "auto",
+                                    minHeight: 100,
+                                    borderRadius: 3,
+                                    background: "linear-gradient(145deg, #ffffff, #f0eaff)",
+                                    boxShadow: "0 6px 20px rgba(0,0,0,0.1)",
+                                    transition: `all 0.8s ease ${index * 0.15}s`,
+                                    opacity: show ? 1 : 0,
+                                    transform: show ? "translate(0)" : hiddenTransform,
+                                    "&:hover": {
+                                        transform: "translateY(-10px)",
+                                        boxShadow: "0 12px 25px rgba(0,0,0,0.15)",
+                                    },
+                                }}
+                            >
+                                <CardContent>
+                                    <Typography variant="h6" fontWeight="600" mb={1} sx={{ color: "#4b2a85" }}>
+                                        {project.name}
+                                    </Typography>
+                                    <Typography variant="body2" color="text.secondary">
+                                        {project.description}
+                                    </Typography>
+                                </CardContent>
+
+                                <CardActions sx={{ display: "flex", justifyContent: "center", gap: 1, flexWrap: "wrap" }}>
+                                    <Button
+                                        variant="contained"
+                                        sx={{ backgroundColor: "#6b3fa0", "&:hover": { backgroundColor: "#532a84" } }}
+                                        href={project.liveLink}
+                                        target="_blank"
+                                    >
+                                        <MdLaunch style={{ marginRight: "5px" }} /> Live
+                                    </Button>
+
+                                    <Button
+                                        variant="contained"
+                                        sx={{ backgroundColor: "#6b3fa0", "&:hover": { backgroundColor: "#532a84" } }}
+                                        href={project.code}
+                                        target="_blank"
+                                    >
+                                        <FaGithub style={{ marginRight: "5px" }} /> Code
+                                    </Button>
+                                </CardActions>
+                            </Card>
+                        </Grid>
+                    );
+                })}
             </Grid>
         </Box>
     );
