@@ -7,23 +7,44 @@ const Herosection = () => {
   const heroRef = useRef(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("show");
-        } else {
-          entry.target.classList.remove("show"); 
-        }
-      },
-      { threshold: 0.3 }
-    );
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+      } else {
+        entry.target.classList.remove("show"); 
+      }
+    },
+    { threshold: 0.3 }
+  );
 
-    if (heroRef.current) observer.observe(heroRef.current);
+  const currentHero = heroRef.current;   // ✅ yaha store kiya
 
-    return () => {
-      if (heroRef.current) observer.unobserve(heroRef.current);
-    };
-  }, []);
+  if (currentHero) observer.observe(currentHero);
+
+  return () => {
+    if (currentHero) observer.unobserve(currentHero); // ✅ yahi use hoga
+  };
+}, []);
+
+  // useEffect(() => {
+  //   const observer = new IntersectionObserver(
+  //     ([entry]) => {
+  //       if (entry.isIntersecting) {
+  //         entry.target.classList.add("show");
+  //       } else {
+  //         entry.target.classList.remove("show"); 
+  //       }
+  //     },
+  //     { threshold: 0.3 }
+  //   );
+
+  //   if (heroRef.current) observer.observe(heroRef.current);
+
+  //   return () => {
+  //     if (heroRef.current) observer.unobserve(heroRef.current);
+  //   };
+  // }, []);
 
   return (
     <section className="hero" id="home" ref={heroRef}>
