@@ -19,25 +19,25 @@ const Skills = () => {
 
   const skillsRef = useRef(null);
   const [show, setShow] = useState(false);
-
+  
   useEffect(() => {
+    if (typeof window === "undefined") return; // SSR safe
+
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          setShow(true);
-        } else {
-          setShow(false);
-        }
+        setShow(entry.isIntersecting);
       },
-      { threshold: 0.3 }
+      { threshold: 0.25 }
     );
 
-    const currentSkills = skillsRef.current;
-
-    if (currentSkills) observer.observe(currentSkills);
+    if (skillsRef.current) {
+      observer.observe(skillsRef.current);
+    }
 
     return () => {
-      if (currentSkills) observer.unobserve(currentSkills);
+      if (skillsRef.current) {
+        observer.unobserve(skillsRef.current);
+      }
     };
   }, []);
 
