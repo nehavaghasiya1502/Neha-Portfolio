@@ -32,12 +32,15 @@ const Skills = () => {
       { threshold: 0.3 }
     );
 
-    if (skillsRef.current) observer.observe(skillsRef.current);
+    const currentSkills = skillsRef.current;
+
+    if (currentSkills) observer.observe(currentSkills);
 
     return () => {
-      if (skillsRef.current) observer.unobserve(skillsRef.current);
+      if (currentSkills) observer.unobserve(currentSkills);
     };
   }, []);
+
 
   return (
     <Box

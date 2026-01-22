@@ -6,6 +6,7 @@ import { MdComputer } from "react-icons/md";
 const About = () => {
 
   const aboutRef = useRef(null);
+  const currentAbout = aboutRef.current;
 
 
   useEffect(() => {
@@ -20,13 +21,12 @@ const About = () => {
       { threshold: 0.2 }
     );
 
-    if (aboutRef.current) {
-      observer.observe(aboutRef.current);
-    }
+    if (currentAbout) observer.observe(currentAbout);
 
     return () => {
-      if (aboutRef.current) observer.unobserve(aboutRef.current);
+      if (currentAbout) observer.unobserve(currentAbout);
     };
+
   }, []);
 
 

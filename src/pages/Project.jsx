@@ -41,24 +41,30 @@ const Projects = () => {
     const [show, setShow] = useState(false);
 
     useEffect(() => {
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                if (entry.isIntersecting) {
-                    setShow(false);
-                    setTimeout(() => setShow(true), 100);
-                } else {
-                    setShow(false);
-                }
-            },
-            { threshold: 0.25 }
-        );
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) {
+        setShow(true);
+      } else {
+        setShow(false);
+      }
+    },
+    { threshold: 0.25 }
+  );
 
-        if (sectionRef.current) observer.observe(sectionRef.current);
+  // Observe the current ref
+  if (skillsRef.current) {
+    observer.observe(skillsRef.current);
+  }
 
-        return () => {
-            if (sectionRef.current) observer.unobserve(sectionRef.current);
-        };
-    }, []);
+  // Cleanup properly
+  return () => {
+    if (skillsRef.current) {
+      observer.unobserve(skillsRef.current);
+    }
+  };
+}, []);
+
     return (
         <Box
             id="projects"
