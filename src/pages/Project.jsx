@@ -41,29 +41,29 @@ const Projects = () => {
     const [show, setShow] = useState(false);
 
     useEffect(() => {
-  const observer = new IntersectionObserver(
-    ([entry]) => {
-      if (entry.isIntersecting) {
-        setShow(true);
-      } else {
-        setShow(false);
-      }
-    },
-    { threshold: 0.25 }
-  );
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setShow(true);
+                } else {
+                    setShow(false);
+                }
+            },
+            { threshold: 0.25 }
+        );
 
-  // Observe the current ref
-  if (skillsRef.current) {
-    observer.observe(skillsRef.current);
-  }
+        const currentSection = sectionRef.current;
 
-  // Cleanup properly
-  return () => {
-    if (skillsRef.current) {
-      observer.unobserve(skillsRef.current);
-    }
-  };
-}, []);
+        if (currentSection) {
+            observer.observe(currentSection);
+        }
+
+        return () => {
+            if (currentSection) {
+                observer.unobserve(currentSection);
+            }
+        };
+    }, []);
 
     return (
         <Box
@@ -84,9 +84,9 @@ const Projects = () => {
             <Grid container spacing={4} justifyContent="center" sx={{ maxWidth: 1440, mx: "auto" }}>
                 {projects.map((project, index) => {
 
-                    let hiddenTransform = "translateX(-80px)"; 
-                    if (index % 2 === 1) hiddenTransform = "translateX(80px)"; 
-                    if (index === 4) hiddenTransform = "translateY(80px)"; 
+                    let hiddenTransform = "translateX(-80px)";
+                    if (index % 2 === 1) hiddenTransform = "translateX(80px)";
+                    if (index === 4) hiddenTransform = "translateY(80px)";
 
                     return (
                         <Grid item xs={12} sm={6} md={6} key={index}>
