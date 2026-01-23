@@ -3,9 +3,8 @@ import { Box, Typography, TextField, Button, Stack } from "@mui/material";
 import { motion } from "framer-motion";
 
 const ContactSection = () => {
-  // Animation variants for bottom-to-top
   const bottomUp = {
-    hidden: { opacity: 0, y: 100 }, // start 100px niche
+    hidden: { opacity: 0, y: 100 },
     visible: { opacity: 1, y: 0, transition: { duration: 1, ease: "easeOut" } },
   };
 

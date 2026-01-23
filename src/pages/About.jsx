@@ -6,8 +6,6 @@ import { MdComputer } from "react-icons/md";
 const About = () => {
 
   const aboutRef = useRef(null);
-  const currentAbout = aboutRef.current;
-
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -21,6 +19,8 @@ const About = () => {
       { threshold: 0.2 }
     );
 
+    const currentAbout = aboutRef.current; 
+
     if (currentAbout) observer.observe(currentAbout);
 
     return () => {
@@ -28,7 +28,6 @@ const About = () => {
     };
 
   }, []);
-
 
   return (
     <section className="about-section" id="about" ref={aboutRef}>

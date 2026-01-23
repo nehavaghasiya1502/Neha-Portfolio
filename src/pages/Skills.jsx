@@ -19,9 +19,9 @@ const Skills = () => {
 
   const skillsRef = useRef(null);
   const [show, setShow] = useState(false);
-  
+
   useEffect(() => {
-    if (typeof window === "undefined") return; // SSR safe
+    if (typeof window === "undefined") return;
 
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -30,16 +30,19 @@ const Skills = () => {
       { threshold: 0.25 }
     );
 
-    if (skillsRef.current) {
-      observer.observe(skillsRef.current);
+    const current = skillsRef.current;
+
+    if (current) {
+      observer.observe(current);
     }
 
     return () => {
-      if (skillsRef.current) {
-        observer.unobserve(skillsRef.current);
+      if (current) {
+        observer.unobserve(current);
       }
     };
   }, []);
+
 
 
   return (
