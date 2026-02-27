@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import "./Herosection.css";
-import resume from "../assets/hero/Neha_Vaghasiya_CV(1).pdf";
+import resume from "../assets/Neha_Vaghasiya_CV.pdf";
 
 const Herosection = () => {
 
