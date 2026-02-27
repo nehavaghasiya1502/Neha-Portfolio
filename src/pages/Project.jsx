@@ -3,44 +3,11 @@ import { Box, Typography, Grid, Card, CardContent, CardActions, Button } from "@
 import { FaGithub } from "react-icons/fa";
 import { MdLaunch } from "react-icons/md";
 
-// const projects = [
-//     {
-//         name: "Neha - Portfolio",
-//         description: "Developed a fully responsive portfolio landing page using React, css and React Bootstrap, featuring modern layout, styled components, smooth visuals for an engaging user experience.",
-//         liveLink: "https://neha-portfolio-zeta.vercel.app/",
-//         code: "https://github.com/nehavaghasiya1502/Neha-Portfolio"
-//     },
-//     {
-//         name: "Fresh-Cart – Fruits Website",
-//         description: "Created a simple and responsive multi-page website for fresh fruits using React Router DOM, showcasing Home, Products, About, and a Contact pages with a clean and modern design.",
-//         liveLink: "https://fresh-cart-peach-mu.vercel.app/",
-//         code: "https://github.com/nehavaghasiya1502/Fresh-Cart"
-//     },
-//     {
-//         name: "Grand-Oria – Hotel Landing Page",
-//         description: "Developed a fully responsive hotel landing page using React, css and React Bootstrap, featuring modern layout, styled components, and smooth visuals for an engaging user experience.",
-//         liveLink: "https://grand-oria.vercel.app/",
-//         code: "https://github.com/nehavaghasiya1502/GrandOria"
-//     },
-//     {
-//         name: "JG University – Landing Page",
-//         description: "Built a modern and fully responsive university website using React and MUI. The site features interactive components. It highlights courses, faculty details, events, and contact information.",
-//         liveLink: "https://jg-university.vercel.app/",
-//         code: "https://github.com/nehavaghasiya1502/JG-University"
-//     },
-//     {
-//         name: "Elegance - Hotel Website",
-//         description: "Developed a fully responsive hotel landing page using HTML, CSS and Bootstrap, featuring modern layout, styled components, and smooth visuals for an engaging user experience.",
-//         liveLink: "https://elegance-bootstrap.vercel.app/",
-//         code: "https://github.com/nehavaghasiya1502/elegance-bootstrap"
-//     }
-// ];
-
 const projects = [
     {
         name: "Neha - Portfolio",
         description: "Developed a fully responsive portfolio landing page using React, CSS and React Bootstrap with modern UI, smooth animations and clean layout.",
-        liveLink: "https://neha-portfolio-zeta.vercel.app/",
+        liveLink: "https://neha-portfolio2.vercel.app/",
         code: "https://github.com/nehavaghasiya1502/Neha-Portfolio"
     },
 
