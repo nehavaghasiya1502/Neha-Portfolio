@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import "./Herosection.css";
 import resume from "../assets/Neha_Vaghasiya_CV.pdf";
+import { ReactTyped } from "react-typed";
 
 const Herosection = () => {
 
@@ -36,10 +37,18 @@ const Herosection = () => {
         <h1 className="hero-title hero-anim delay-2">
           Neha <span>Vaghasiya</span>
         </h1>
-
-        <h3 className="hero-anim delay-3">
-          IT Graduate & Aspiring Full Stack Developer
-        </h3>
+        <h2 className="hero-anim delay-3">
+          <ReactTyped
+            strings={[
+              "IT Graduate",
+              "Aspiring Full Stack Developer",
+              "Passionate Coder",
+            ]}
+            typeSpeed={60}
+            backSpeed={40}
+            loop
+          />
+        </h2>
 
         <p className="hero-anim delay-4">
           I love turning ideas into interactive web experiences using

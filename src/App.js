@@ -31,7 +31,6 @@ function App() {
           navLinks={navLinks}
           socialLinks={socialLinks}
         />
-
         <Herosection />
         <About />
         <Skills />

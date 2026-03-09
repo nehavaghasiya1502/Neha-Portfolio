@@ -69,11 +69,12 @@ const Skills = () => {
         My Skills
       </Typography>
 
-      <Box maxWidth="900px" mx="auto">
+      <Box className="skill-container" maxWidth="900px" mx="auto">
         <Stack spacing={3}>
           {skills.map((skill, index) => (
             <Box
               key={index}
+                 className="skill-card"
               sx={{
                 p: 3,
                 backgroundColor: "#f4f2ff",

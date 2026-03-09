@@ -56,7 +56,7 @@ const About = () => {
           <div className="about-card fade-card delay-4">
             <div className="icon"><FaUserGraduate /></div>
             <h3>Education</h3>
-            <p>BCA (IT)</p>
+            <p>Bachelor's of Computer Applications</p>
           </div>
 
           <div className="about-card fade-card delay-5">
